@@ -2,8 +2,6 @@ package org.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  * 项目启动类
@@ -12,10 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  */
 @SpringBootApplication
 public class Application {
-
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
-        JdbcTemplate jdbcTemplate = context.getBean(JdbcTemplate.class);
-        System.out.println(jdbcTemplate);
+        SpringApplication.run(Application.class, args);
     }
 }
