@@ -1,3 +1,4 @@
+-- 项目启动时该脚本自动执行，无需手动执行
 -- 用户表
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
