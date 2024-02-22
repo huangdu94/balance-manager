@@ -1,4 +1,4 @@
-# balance-manager
+# limit-manager
 ## 需求
 + 独立完成基于java spring boot的项目，开发工具可以用IntelliJ，包含文档说明、源码、测试用例。
 + 功能： 实现一个额度管理功能，模拟多用户进行不同类型额度申请、扣减的功能。
