@@ -16,3 +16,10 @@
 + 模拟多用户发起
 ### 3. 测试用例
 + 覆盖管理额度管理功能
+## 数据库初始化
++ 在项目根目录执行以下命令
+``` shell
+cd src/main/resources
+rm -rf *.db
+sqlite3 limit-manager.db < schema.sql
+```
