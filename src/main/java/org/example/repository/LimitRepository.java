@@ -27,8 +27,8 @@ public class LimitRepository {
         return jdbcTemplate.update(Sql.LIMITS_INSERT, userId, limitTypeId, amount) > 0;
     }
 
-    public boolean update(long userId, long limitTypeId, double amount) {
-        return jdbcTemplate.update(Sql.LIMITS_UPDATE, amount, userId, limitTypeId) > 0;
+    public boolean update(long userId, long limitTypeId, double oldAmount, double newAmount) {
+        return jdbcTemplate.update(Sql.LIMITS_UPDATE, newAmount, userId, limitTypeId, oldAmount) > 0;
     }
 
     /**
