@@ -15,24 +15,24 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public abstract class BaseCache {
     @Autowired
     private JdbcTemplate jdbcTemplate;
-    private Map<Integer, String> idNameMap;
-    private Map<String, Integer> nameIdMap;
+    private Map<Long, String> idNameMap;
+    private Map<String, Long> nameIdMap;
 
     public void init(String sql) {
         List<Map<String, Object>> records = jdbcTemplate.queryForList(sql);
         idNameMap = new HashMap<>(records.size());
         nameIdMap = new HashMap<>(records.size());
         for (Map<String, Object> record : records) {
-            idNameMap.put((Integer)record.get("id"), (String)record.get("name"));
-            nameIdMap.put((String)record.get("name"), (Integer)record.get("id"));
+            idNameMap.put(Long.valueOf((Integer)record.get("id")), (String)record.get("name"));
+            nameIdMap.put((String)record.get("name"), Long.valueOf((Integer)record.get("id")));
         }
     }
 
-    public Map<Integer, String> getIdNameMap() {
+    public Map<Long, String> getIdNameMap() {
         return idNameMap;
     }
 
-    public Map<String, Integer> getNameIdMap() {
+    public Map<String, Long> getNameIdMap() {
         return nameIdMap;
     }
 }
