@@ -23,7 +23,7 @@ public class LimitServiceImpl implements LimitService {
     @Transactional(rollbackFor = Exception.class)
     public boolean initialize(Long userId, Long limitTypeId, Double amount) {
         parameterValidation.check(userId, limitTypeId, amount);
-        parameterValidation.check(limitRepository.count(userId, limitTypeId) > 0, "limit already exist.");
+        parameterValidation.check(limitRepository.count(userId, limitTypeId) == 0, "limit already exist.");
         return limitRepository.insert(userId, limitTypeId, amount);
     }
 
@@ -31,7 +31,7 @@ public class LimitServiceImpl implements LimitService {
     @Transactional(rollbackFor = Exception.class)
     public boolean increase(Long userId, Long limitTypeId, Double amount) {
         parameterValidation.check(userId, limitTypeId, amount);
-        parameterValidation.check(limitRepository.count(userId, limitTypeId) == 0, "limit is not exist.");
+        parameterValidation.check(limitRepository.count(userId, limitTypeId) > 0, "limit is not exist.");
         Double origin = limitRepository.select(userId, limitTypeId);
         return limitRepository.update(userId, limitTypeId, origin, origin + amount);
     }
@@ -40,7 +40,7 @@ public class LimitServiceImpl implements LimitService {
     @Transactional(rollbackFor = Exception.class)
     public boolean decrease(Long userId, Long limitTypeId, Double amount) {
         parameterValidation.check(userId, limitTypeId, amount);
-        parameterValidation.check(limitRepository.count(userId, limitTypeId) == 0, "limit is not exist.");
+        parameterValidation.check(limitRepository.count(userId, limitTypeId) > 0, "limit is not exist.");
         Double origin = limitRepository.select(userId, limitTypeId);
         parameterValidation.checkAmount(origin - amount);
         return limitRepository.update(userId, limitTypeId, origin, origin - amount);
@@ -49,7 +49,7 @@ public class LimitServiceImpl implements LimitService {
     @Override
     public Double inquire(Long userId, Long limitTypeId) {
         parameterValidation.check(userId, limitTypeId);
-        parameterValidation.check(limitRepository.count(userId, limitTypeId) == 0, "limit is not exist.");
+        parameterValidation.check(limitRepository.count(userId, limitTypeId) > 0, "limit is not exist.");
         return limitRepository.select(userId, limitTypeId);
     }
 }
