@@ -12,5 +12,5 @@ public interface Sql {
     String LIMITS_SELECT = "SELECT amount FROM limits WHERE user_id = ? AND limit_type_id = ?;";
     String LIMITS_INSERT = "INSERT INTO limits (user_id, limit_type_id, amount) VALUES (?, ?, ?);";
     String LIMITS_UPDATE = "UPDATE limits SET amount = ? WHERE user_id = ? AND limit_type_id = ? AND amount = ?;";
-    String LIMITS_DELETE_ALL = "DELETE FROM limits;";
+    String LIMITS_DELETE = "DELETE FROM limits WHERE user_id = ? AND limit_type_id = ?;";
 }
