@@ -1,5 +1,6 @@
 package org.example.repository;
 
+import org.example.sql.Sql;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -14,5 +15,19 @@ public class LimitRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    public Long count(long userId, long limitTypeId) {
+        return jdbcTemplate.queryForObject(Sql.LIMITS_COUNT, Long.class, userId, limitTypeId);
+    }
 
+    public Double select(long userId, long limitTypeId) {
+        return jdbcTemplate.queryForObject(Sql.LIMITS_SELECT, Double.class, userId, limitTypeId);
+    }
+
+    public boolean insert(long userId, long limitTypeId, double amount) {
+        return jdbcTemplate.update(Sql.LIMITS_INSERT, userId, limitTypeId, amount) > 0;
+    }
+
+    public boolean update(long userId, long limitTypeId, double amount) {
+        return jdbcTemplate.update(Sql.LIMITS_UPDATE, amount, userId, limitTypeId) > 0;
+    }
 }
