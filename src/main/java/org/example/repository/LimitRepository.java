@@ -30,4 +30,11 @@ public class LimitRepository {
     public boolean update(long userId, long limitTypeId, double amount) {
         return jdbcTemplate.update(Sql.LIMITS_UPDATE, amount, userId, limitTypeId) > 0;
     }
+
+    /**
+     * 该方法用于清理测试数据
+     */
+    public void clear() {
+        jdbcTemplate.update(Sql.LIMITS_DELETE_ALL);
+    }
 }
