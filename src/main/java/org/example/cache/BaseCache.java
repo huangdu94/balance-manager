@@ -1,5 +1,6 @@
 package org.example.cache;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +24,7 @@ public abstract class BaseCache {
         List<Map<String, Object>> records = jdbcTemplate.queryForList(sql);
         idNameMap = new HashMap<>(records.size());
         nameIdMap = new HashMap<>(records.size());
+        ids = new ArrayList<>(records.size());
         for (Map<String, Object> record : records) {
             Long id = Long.valueOf((Integer)record.get("id"));
             String name = (String)record.get("name");
