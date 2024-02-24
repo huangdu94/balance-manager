@@ -17,14 +17,18 @@ public abstract class BaseCache {
     private JdbcTemplate jdbcTemplate;
     private Map<Long, String> idNameMap;
     private Map<String, Long> nameIdMap;
+    private List<Long> ids;
 
     public void init(String sql) {
         List<Map<String, Object>> records = jdbcTemplate.queryForList(sql);
         idNameMap = new HashMap<>(records.size());
         nameIdMap = new HashMap<>(records.size());
         for (Map<String, Object> record : records) {
-            idNameMap.put(Long.valueOf((Integer)record.get("id")), (String)record.get("name"));
-            nameIdMap.put((String)record.get("name"), Long.valueOf((Integer)record.get("id")));
+            Long id = Long.valueOf((Integer)record.get("id"));
+            String name = (String)record.get("name");
+            idNameMap.put(id, name);
+            nameIdMap.put(name, id);
+            ids.add(id);
         }
     }
 
@@ -34,5 +38,9 @@ public abstract class BaseCache {
 
     public Map<String, Long> getNameIdMap() {
         return nameIdMap;
+    }
+
+    public List<Long> getIds() {
+        return ids;
     }
 }
