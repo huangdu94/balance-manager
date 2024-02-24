@@ -30,10 +30,14 @@ public class CacheTest {
     private void check(BaseCache cache) {
         Assert.assertNotNull(cache.getIdNameMap());
         Assert.assertNotNull(cache.getNameIdMap());
+        Assert.assertNotNull(cache.getIds());
         Assert.assertTrue(cache.getIdNameMap().size() > 0);
         Assert.assertTrue(cache.getNameIdMap().size() > 0);
-        Assert.assertEquals(cache.getIdNameMap().size(), cache.getIdNameMap().size());
+        Assert.assertTrue(cache.getIds().size() > 0);
+        Assert.assertEquals(cache.getIdNameMap().size(), cache.getNameIdMap().size());
+        Assert.assertEquals(cache.getIdNameMap().size(), cache.getIds().size());
         System.out.println(cache.getIdNameMap());
-        System.out.println(cache.getIdNameMap());
+        System.out.println(cache.getNameIdMap());
+        System.out.println(cache.getIds());
     }
 }
