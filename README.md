@@ -42,3 +42,19 @@
 + `org.example.service.impl.LimitServiceImpl` 额度管理模块实现类
 + `org.example.service.LimitServiceTest` 额度管理模块测试类
 + `org.example.job.TimedJob` 模拟多用户操作的定时任务
++ `org.example.Application` 项目启动类（main方法）
+
+### 3. 模拟思路
+
+1. 定时任务每秒执行一次
+2. 每一次执行，以下参数都随机
+    + user
+    + limit type
+    + amount
+    + 操作类型随机（初始化，增加，扣减，查询）
+3. 每一次执行，都打印了相关日志（包括执行参数和执行结果）
+
+### 4. 注意事项
+
++ 模拟刚开始的时候，会有很多操作提示`[error] limit is not exist.`，此为正常现象（因为当额度类型没有初始化的时候，增加，扣减，查询不能进行）
++ 模拟进行一段时间后，初始化操作基本都会提示`[error] limit already exist.`，此也为正常现象（因为额度不能重复初始化）
