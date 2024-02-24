@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * LimitService 实现类
  *
- * @author yiyun (huangdu.hd@alibaba-inc.com)
+ * @author huangdu
  */
 @Service
 public class LimitServiceImpl implements LimitService {

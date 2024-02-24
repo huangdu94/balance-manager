@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * 额度
  *
- * @author yiyun (huangdu.hd@alibaba-inc.com)
+ * @author huangdu
  */
 @Data
 public class Limit {

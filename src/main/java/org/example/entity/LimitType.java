@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * 额度类型
  *
- * @author yiyun (huangdu.hd@alibaba-inc.com)
+ * @author huangdu
  */
 @Data
 public class LimitType {

@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 /**
  * 抽象缓存
  *
- * @author yiyun (huangdu.hd@alibaba-inc.com)
+ * @author huangdu
  */
 public abstract class BaseCache {
     @Autowired

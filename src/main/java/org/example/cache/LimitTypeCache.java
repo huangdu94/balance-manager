@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 额度类型缓存
  *
- * @author yiyun (huangdu.hd@alibaba-inc.com)
+ * @author huangdu
  */
 @Component
 public class LimitTypeCache extends BaseCache {

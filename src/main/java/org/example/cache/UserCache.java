@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 用户缓存
  *
- * @author yiyun (huangdu.hd@alibaba-inc.com)
+ * @author huangdu
  */
 @Component
 public class UserCache extends BaseCache {

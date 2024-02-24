@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  * 参数合法性校验
  *
- * @author yiyun (huangdu.hd@alibaba-inc.com)
+ * @author huangdu
  */
 @Component
 public class ParameterValidation {

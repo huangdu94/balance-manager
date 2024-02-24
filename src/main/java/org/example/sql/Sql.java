@@ -3,7 +3,7 @@ package org.example.sql;
 /**
  * 项目中用到的SQL
  *
- * @author yiyun (huangdu.hd@alibaba-inc.com)
+ * @author huangdu
  */
 public interface Sql {
     String USERS_SELECT = "SELECT id, name FROM users;";

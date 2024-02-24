@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 /**
  * 额度管理 Repository
  *
- * @author yiyun (huangdu.hd@alibaba-inc.com)
+ * @author huangdu
  */
 @Repository
 public class LimitRepository {

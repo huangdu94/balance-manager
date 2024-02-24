@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 /**
  * LimitRepository 测试类
  *
- * @author yiyun (huangdu.hd@alibaba-inc.com)
+ * @author huangdu
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

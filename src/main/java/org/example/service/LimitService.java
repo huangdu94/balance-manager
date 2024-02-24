@@ -3,7 +3,7 @@ package org.example.service;
 /**
  * 额度 service 接口
  *
- * @author yiyun (huangdu.hd@alibaba-inc.com)
+ * @author huangdu
  */
 public interface LimitService {
     /**

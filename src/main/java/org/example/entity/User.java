@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * 用户
  *
- * @author yiyun (huangdu.hd@alibaba-inc.com)
+ * @author huangdu
  */
 @Data
 public class User {
