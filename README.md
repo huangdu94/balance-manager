@@ -41,3 +41,4 @@
 + `org.example.service.LimitService` 额度管理模块接口
 + `org.example.service.impl.LimitServiceImpl` 额度管理模块实现类
 + `org.example.service.LimitServiceTest` 额度管理模块测试类
++ `org.example.job.TimedJob` 模拟多用户操作的定时任务
