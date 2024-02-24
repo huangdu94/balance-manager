@@ -25,7 +25,9 @@
 
 + 覆盖管理额度管理功能
 
-## 项目运行环境
+## 项目概览
+
+### 1. 运行环境
 
 1. `java -version`
     + java version "1.8.0_152"
@@ -33,3 +35,9 @@
     + Java HotSpot(TM) 64-Bit Server VM (build 25.152-b16, mixed mode)
 2. `sqlite3 -version`
     + 3.39.5 2022-10-14 20:58:05 554764a6e721fab307c63a4f98cd958c8428a5d9d8edfde951858d6fd02daapl
+
+### 2. 核心类
+
++ `org.example.service.LimitService` 额度管理模块接口
++ `org.example.service.impl.LimitServiceImpl` 额度管理模块实现类
++ `org.example.service.LimitServiceTest` 额度管理模块测试类
