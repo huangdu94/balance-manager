@@ -20,19 +20,19 @@ public class LimitServiceLogUtil {
     private LimitTypeCache limitTypeCache;
 
     public void initialize(Long userId, Long limitTypeId, Double amount) {
-        error("initialize", userId, limitTypeId, amount);
+        log("initialize", userId, limitTypeId, amount);
     }
 
     public void increase(Long userId, Long limitTypeId, Double amount) {
-        error("increase", userId, limitTypeId, amount);
+        log("increase", userId, limitTypeId, amount);
     }
 
     public void decrease(Long userId, Long limitTypeId, Double amount) {
-        error("decrease", userId, limitTypeId, amount);
+        log("decrease", userId, limitTypeId, amount);
     }
 
     public void inquire(Long userId, Long limitTypeId) {
-        error("inquire", userId, limitTypeId);
+        log("inquire", userId, limitTypeId);
     }
 
     public void error(Exception e) {
@@ -43,11 +43,11 @@ public class LimitServiceLogUtil {
         log.info("[result] {}.", result);
     }
 
-    private void error(String opt, Long userId, Long limitTypeId) {
+    private void log(String opt, Long userId, Long limitTypeId) {
         log.info("[{}] user:{}, limit type:{}.", opt, userCache.getIdNameMap().get(userId), limitTypeCache.getIdNameMap().get(limitTypeId));
     }
 
-    private void error(String opt, Long userId, Long limitTypeId, Double amount) {
+    private void log(String opt, Long userId, Long limitTypeId, Double amount) {
         log.info("[{}] user:{}, limit type:{}, amount: {}.", opt, userCache.getIdNameMap().get(userId), limitTypeCache.getIdNameMap().get(limitTypeId), amount);
     }
 }
